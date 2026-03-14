@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f1f5f9;
+  --bg-soft: #e2e8f0;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: rgba(15, 23, 42, 0.14);
+  --primary: #0f766e;
+  --primary-strong: #0d9488;
+  --danger: #dc2626;
+}
+
+:root.dark {
+  --bg: #020617;
+  --bg-soft: #0f172a;
+  --surface: #111827;
+  --surface-2: #0b1220;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.24);
+  --primary: #14b8a6;
+  --primary-strong: #2dd4bf;
+  --danger: #f87171;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(20, 184, 166, 0.2), transparent 28%),
+    radial-gradient(circle at 92% 96%, rgba(14, 165, 233, 0.15), transparent 26%),
+    var(--bg);
+  color: var(--text);
+  font-family: "Plus Jakarta Sans", "Nunito Sans", "Segoe UI", sans-serif;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 360ms ease both;
+}
+
+.pop-in {
+  animation: popIn 180ms ease both;
+}
+
+.thin-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.85), rgba(14, 116, 144, 0.9));
+  border-radius: 999px;
+}
+
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
